@@ -1,0 +1,20 @@
+{
+    "manifest_version":3,
+    "version":"1.0",
+    "description":"This extension will inject a button in reply tweet section upon click it will add the Replying Tweet in Reply Text Section",
+    "name":"Tweet Copy Paster",
+    "permissions":["tabs","activeTab"],
+    "action":{
+        "default_popup": "popup.html"
+    },
+    "background":{
+        "service_worker":"background.js"
+    },
+    "content_scripts":[
+      {
+       "matches":["*://*/*"],
+       "js":["content.js"],
+       "run_at":"document_end"
+      }
+    ]
+  }
